@@ -9,9 +9,6 @@ import json
 
 ocr = PaddleOCR(use_angle_cls=True, lang='en')
 
-
-
-
 def take_bounded_screenshot(x1, y1, x2, y2, app):
     width = abs(x2 - x1)
     height = abs(y2 - y1)
@@ -36,7 +33,7 @@ class Application():
         self.current_x = None
         self.current_y = None
 
-        root.geometry('400x50+200+200')  # set new geometry
+        root.geometry('800x600')  # set new geometry
         root.title('Lil Snippy')
 
         self.menu_frame = Frame(master)
