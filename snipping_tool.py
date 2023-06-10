@@ -10,11 +10,6 @@ import json
 ocr = PaddleOCR(use_angle_cls=True, lang='en')
 
 
-with open('config.ini') as f:
-    config = json.load(f)
-    
-directory = config['screenshot_directory']
-
 
 
 def take_bounded_screenshot(x1, y1, x2, y2, app):
