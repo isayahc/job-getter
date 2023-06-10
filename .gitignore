@@ -1,0 +1,47 @@
+# Compiled source code
+*.o
+*.pyc
+*.class
+
+# Compiled binaries
+/bin/
+/build/
+/dist/
+/lib/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Dependency directories
+/node_modules/
+/bower_components/
+
+# Package files
+*.zip
+*.tar.gz
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore __pycache__ directories globally
+__pycache__/
+
+# Ignore specific files or directories in the root directory
+/file_to_ignore.txt
+/directory_to_ignore/
+
+# Ignore specific files or directories in any directory
+**/__pycache__/
+**/*.pyc
+
+/snips
+/venv
