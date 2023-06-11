@@ -15,6 +15,32 @@ Make sure that you have all the dependencies installed. You can install them wit
 pip install -r requirements.txt
 ```
 
+
+## Installing PaddlePaddle
+
+If you want to use PaddlePaddle in this project, you can add the following lines to your requirements.txt file:
+
+```
+paddlepaddle-gpu==2.1.0.post101  # for GPU version
+paddlepaddle==2.1.0.post101     # for CPU version
+```
+
+You can choose between the GPU and CPU versions of PaddlePaddle depending on your hardware configuration.
+
+If you have any questions about installing PaddlePaddle, feel free to reach out to me.
+
+Thanks for the reminder! Here are the pip commands you can use to install PaddlePaddle:
+
+```
+# For GPU version
+python -m pip install paddlepaddle-gpu==2.1.0.post101 -f https://mirror.baidu.com/pypi/simple
+
+# For CPU version
+python -m pip install paddlepaddle -i https://mirror.baidu.com/pypi/simple
+```
+
+Let me know if you have any other questions!
+
 ## How to Use
 
 When the application starts, a window titled 'Lil Snippy' appears. To begin taking a screen snippet, press the green button in the window. This will minimize the main window and allow you to select an area on the screen by clicking and dragging your mouse. Once you release the mouse button, the application takes a screenshot of the selected area and uses OCR to recognize any text in it. The recognized text is then displayed in the application's main window.
