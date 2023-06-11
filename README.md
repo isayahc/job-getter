@@ -21,8 +21,8 @@ pip install -r requirements.txt
 If you want to use PaddlePaddle in this project, you can add the following lines to your requirements.txt file:
 
 ```bash
-paddlepaddle-gpu==2.1.0.post101  # for GPU version
-paddlepaddle==2.1.0.post101     # for CPU version
+paddlepaddle-gpu  # for GPU version
+paddlepaddle # for CPU version
 ```
 
 You can choose between the GPU and CPU versions of PaddlePaddle depending on your hardware configuration.
@@ -33,7 +33,7 @@ Here are the pip commands you can use to install PaddlePaddle:
 
 ```bash
 # For GPU version
-python -m pip install paddlepaddle-gpu==2.1.0.post101 -f https://mirror.baidu.com/pypi/simple
+python -m pip install paddlepaddle-gpu -f https://mirror.baidu.com/pypi/simple
 
 # For CPU version
 python -m pip install paddlepaddle -i https://mirror.baidu.com/pypi/simple
