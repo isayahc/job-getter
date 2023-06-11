@@ -9,18 +9,18 @@ To run the application, navigate to the project's root directory and run the com
 ```bash
 python3 snipping_tool.py
 ```
+
 Make sure that you have all the dependencies installed. You can install them with:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-
 ## Installing PaddlePaddle
 
 If you want to use PaddlePaddle in this project, you can add the following lines to your requirements.txt file:
 
-```
+```bash
 paddlepaddle-gpu==2.1.0.post101  # for GPU version
 paddlepaddle==2.1.0.post101     # for CPU version
 ```
@@ -29,17 +29,15 @@ You can choose between the GPU and CPU versions of PaddlePaddle depending on you
 
 If you have any questions about installing PaddlePaddle, feel free to reach out to me.
 
-Thanks for the reminder! Here are the pip commands you can use to install PaddlePaddle:
+Here are the pip commands you can use to install PaddlePaddle:
 
-```
+```bash
 # For GPU version
 python -m pip install paddlepaddle-gpu==2.1.0.post101 -f https://mirror.baidu.com/pypi/simple
 
 # For CPU version
 python -m pip install paddlepaddle -i https://mirror.baidu.com/pypi/simple
 ```
-
-Let me know if you have any other questions!
 
 ## How to Use
 
