@@ -10,9 +10,18 @@ import numpy as np
 import threading
 import os
 from typing import Optional
+import pyttsx3
+
+
 
 
 ocr = PaddleOCR(use_angle_cls=True, lang='en')  # Initialize OCR engine
+
+def text_to_speech(text):
+    engine = pyttsx3.init()
+    engine.say(text)
+    engine.runAndWait()
+
 
 
 def take_bounded_screenshot(x1: int, y1: int, x2: int, y2: int, app: 'Application') -> None:
@@ -53,7 +62,7 @@ class Application:
         self.current_x: Optional[int] = None
         self.current_y: Optional[int] = None
 
-        root.geometry('800x600')  # set new geometry
+        root.geometry('1200x800') # set new geometry
         root.title('Lil Snippy')
 
         self.menu_frame = Frame(master)
@@ -68,11 +77,20 @@ class Application:
         self.display = Text(self.buttonBar, height=10, width=30)
         self.display.pack()
 
+        self.ttsOnButton = Button(self.buttonBar, text='Turn TTS On', command=self.turn_tts_on)
+        self.ttsOnButton.pack()
+
+        self.ttsOffButton = Button(self.buttonBar, text='Turn TTS Off', command=self.turn_tts_off)
+        self.ttsOffButton.pack()
+
         self.master_screen = Toplevel(root)
         self.master_screen.withdraw()
         self.master_screen.attributes("-transparent", "maroon3")
         self.picture_frame = Frame(self.master_screen, background="maroon3")
         self.picture_frame.pack(fill=BOTH, expand=YES)
+
+        self.tts_status = False
+
 
     def create_screen_canvas(self) -> None:
         """
@@ -142,12 +160,19 @@ class Application:
         print(self.current_x)
         print(self.current_y)
 
-    def display_text(self, text: str) -> None:
-        """
-        Displays the given text in the application.
-        """
+    def display_text(self, text: str):
         self.display.delete("1.0", END)
         self.display.insert(INSERT, text)
+        if self.tts_status:
+            threading.Thread(target=text_to_speech, args=(text,)).start()  # TTS in a new thread so it doesn't block the UI
+
+
+    def turn_tts_on(self):
+        self.tts_status = True
+
+    def turn_tts_off(self):
+        self.tts_status = False
+
 
 
 if __name__ == '__main__':
